@@ -1,100 +1,95 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Paul McConnell – Contact Card</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<meta name="theme-color" content="#006166" />
-<style>
-  body {
-    background: url("Background .png") no-repeat center center fixed;
-    background-size: cover;
-    overflow-y: auto;
-    color: white;
-  }
-  a { text-decoration: none; color: #fff; }
-  a:hover { opacity:.85; }
-  .icon-img { height:18px; filter:brightness(0) invert(1); }
-  .icon-email { width:20px; height:auto; filter:brightness(0) invert(1); }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paul McConnell – Contact Card</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="theme-color" content="#0D6569" />
+  <style>
+    html, body { margin: 0; padding: 0; min-height: 100vh; }
+    body {
+      background-color: #0D6569;
+      background-image: url("BC.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      overflow-y: auto;
+      color: white;
+      font-family: 'Tajawal', sans-serif;
+    }
+    a { text-decoration: none; color: #fff; }
+    a:hover { opacity: .85; }
+    .icon-img { height: 18px; filter: brightness(0) invert(1); }
+    .icon-email { width: 20px; filter: brightness(0) invert(1); }
+    main { position: relative; z-index: 1; }
+  </style>
 </head>
 
 <body class="min-h-screen flex items-start justify-center p-4">
-  <!-- Switch to Arabic -->
   <a href="arabic.html"
      class="fixed top-3 right-3 px-3 py-1.5 rounded-full border border-white/60 text-xs font-medium">
-     العربية
+    العربية
   </a>
 
-  <main class="w-full max-w-sm mx-auto text-white">
+  <main class="w-full max-w-sm mx-auto text-white pb-40">
     <div class="text-center">
       <img src="Paul.jpeg" alt="Paul McConnell"
-           class="w-28 h-28 rounded-full ring-4 ring-white object-cover mx-auto mt-6" />
+        class="w-28 h-28 rounded-full ring-4 ring-white object-cover mx-auto mt-6" />
       <h1 class="mt-3 text-2xl font-semibold">Paul McConnell</h1>
       <h2 class="tracking-widest text-sm text-white mt-1">
         Deputy Director General at Riyadh Schools Misk City
       </h2>
     </div>
 
-    <div class="mt-6 space-y-3 text-left text-[13px]">
-      <a href="tel:+966590258831" class="flex items-center gap-2">
-        <img src="Picture1.png" class="icon-img" alt="Phone Icon" />
-        <span>+966 59 025 8831</span>
+    <div class="mt-5 space-y-1 text-left text-base sm:text-lg">
+      <a href="tel:+966590258831" class="flex items-center gap-2 py-2 px-2 rounded-lg hover:bg-white/5">
+        <img src="Picture1.png" class="icon-img" />
+        <span class="font-medium">+966 59 025 8831</span>
       </a>
-      <a href="mailto:p.mcconnell@RSMC.edu.sa" class="flex items-center gap-2">
-        <img src="Picture2.png" class="icon-email" alt="Email Icon" />
-        <span>p.mcconnell@RSMC.edu.sa</span>
+
+      <a href="mailto:p.mcconnell@RSMC.edu.sa" class="flex items-center gap-2 py-2 px-2 rounded-lg hover:bg-white/5">
+        <img src="Picture2.png" class="icon-email" />
+        <span class="font-medium break-all">p.mcconnell@RSMC.edu.sa</span>
       </a>
-      <a href="https://rsg.edu.sa/RSMiskCity/" target="_blank" class="flex items-center gap-2">
-        <img src="Picture3.png" class="icon-img" alt="Website Icon" />
-        <span>Website</span>
-      </a>
-      <a href="https://sa.linkedin.com/in/paul-mcconnell-7a9bb5219" target="_blank" class="flex items-center gap-2">
-        <img src="Picture4.png" class="icon-img" alt="LinkedIn Icon" />
-        <span>LinkedIn</span>
+
+      <a href="https://sa.linkedin.com/in/paul-mcconnell-7a9bb5219" target="_blank"
+         class="flex items-center gap-2 py-2 px-2 rounded-lg hover:bg-white/5">
+        <img src="Picture4.png" class="icon-img" />
+        <span class="font-medium">LinkedIn</span>
       </a>
     </div>
 
     <button id="saveBtn"
-      class="mt-7 w-2/3 mx-auto block rounded-full bg-green-400 text-white font-medium py-2 text-sm active:scale-[0.99] hover:bg-green-300 transition">
+      class="mt-4 w-[72%] mx-auto block rounded-full text-white font-semibold py-2.5 text-sm transition"
+      style="background-color:#41AE72;">
       + Save contact
     </button>
-
-    <div class="mt-8 flex flex-col items-center gap-3 mb-8">
-      <img src="RSMC Logo.png" alt="Riyadh Schools Misk City" class="w-2/3 mx-auto block" />
-      <img src="أيقونات-١٩.png" alt="Misk and Riyadh Schools Group"
-           class="w-4/5 mx-auto block rounded-lg" />
-    </div>
   </main>
 
   <script>
-  document.getElementById('saveBtn').addEventListener('click', () => {
-    const vcard = [
-      'BEGIN:VCARD',
-      'VERSION:3.0',
-      'N:McConnell;Paul;;;',
-      'FN:Paul McConnell',
-      'TITLE:Deputy Director General',
-      'ORG:Riyadh Schools Misk City',
-      'TEL;TYPE=CELL,VOICE:+966590258831',
-      'EMAIL;TYPE=INTERNET:p.mcconnell@RSMC.edu.sa',
-      'URL:https://rsg.edu.sa/RSMiskCity/',
-      'item1.URL:https://sa.linkedin.com/in/paul-mcconnell-7a9bb5219',
-      'item1.X-ABLabel:LinkedIn',
-      'END:VCARD'
-    ].join('\n');
+    document.getElementById('saveBtn').addEventListener('click', () => {
+      const vcard = [
+        'BEGIN:VCARD','VERSION:3.0',
+        'N:McConnell;Paul;;;','FN:Paul McConnell',
+        'TITLE:Deputy Director General',
+        'ORG:Riyadh Schools Misk City',
+        'TEL;TYPE=CELL,VOICE:+966590258831',
+        'EMAIL;TYPE=INTERNET:p.mcconnell@RSMC.edu.sa',
+        'URL:https://sa.linkedin.com/in/paul-mcconnell-7a9bb5219',
+        'END:VCARD'
+      ].join('\n');
 
-    const blob = new Blob([vcard], { type:'text/vcard;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'Paul_McConnell.vcf';
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1500);
-  });
+      const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Paul_McConnell.vcf';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
   </script>
 </body>
 </html>
+
 
